@@ -71,16 +71,12 @@ public class ManagerHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
         scrlWorker = new javax.swing.JScrollPane();
         tblWorker = new javax.swing.JTable();
         lblHeader = new javax.swing.JLabel();
         btnLogOut = new javax.swing.JButton();
         btnAddWorker = new javax.swing.JButton();
         btnAddWorkday = new javax.swing.JButton();
-
-        jButton2.setText("Add Workday");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,14 +231,10 @@ public class ManagerHome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAddWorkerActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnAddWorkdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddWorkdayActionPerformed
         AddWorkday dialog = new AddWorkday(this);
         dialog.setVisible(true);
         DisplayDetails();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void btnAddWorkdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddWorkdayActionPerformed
-
     }//GEN-LAST:event_btnAddWorkdayActionPerformed
 
     /**
@@ -253,7 +245,6 @@ public class ManagerHome extends javax.swing.JFrame {
     private javax.swing.JButton btnAddWorkday;
     private javax.swing.JButton btnAddWorker;
     private javax.swing.JButton btnLogOut;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JScrollPane scrlWorker;
     private javax.swing.JTable tblWorker;
