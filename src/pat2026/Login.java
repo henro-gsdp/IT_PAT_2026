@@ -60,14 +60,6 @@ public class Login {
             return;
         }
 
-        // NEW: a code containing "MAN" is a manager, so open the manager screen
-        if (enteredCode.toUpperCase().contains("MAN")) {
-            ManagerHome managerHome = new ManagerHome();
-            managerHome.setVisible(true);
-            currentFrame.dispose();
-            return; // stop here, managers do not need a worker profile
-        }
-
         try {
             GetWorkerDetails details = new GetWorkerDetails();
             boolean found = details.getWorkerData(enteredCode);
@@ -79,8 +71,14 @@ public class Login {
 
             Worker loggedInWorker = details.getEmployee();
 
-            WorkerHome home = new WorkerHome(loggedInWorker);
-            home.setVisible(true);
+            // a code containing "MAN" is a manager, so open the manager screen
+            if (enteredCode.toUpperCase().contains("MAN")) {
+                ManagerHome managerHome = new ManagerHome(loggedInWorker);
+                managerHome.setVisible(true);
+            } else {
+                WorkerHome home = new WorkerHome(loggedInWorker);
+                home.setVisible(true);
+            }
 
             currentFrame.dispose();
 

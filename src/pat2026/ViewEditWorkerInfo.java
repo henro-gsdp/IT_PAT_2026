@@ -18,41 +18,49 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
         super(parent, modal);
         this.workerCode = workerCode;
         initComponents();
+        setupBackground();
         displayOldData();
+    }
+
+    private void setupBackground() {
+        this.getContentPane().setBackground(new java.awt.Color(0, 0, 0, 0));
+        javax.swing.JLabel background = new javax.swing.JLabel(new javax.swing.ImageIcon(getClass().getResource("/pat2026/public/image_470e50a4.jpg")));
+        this.getLayeredPane().add(background, javax.swing.JLayeredPane.FRAME_CONTENT_LAYER);
+        background.setBounds(0, 0, this.getWidth(), this.getHeight());
+
     }
 
     // Loads the worker's current details from the file into the fields
     private void displayOldData() {
-    try {
-        GetWorkerDetails gwd = new GetWorkerDetails();
-        gwd.getWorkerData(workerCode);
-        Worker worker = gwd.getEmployee();
+        try {
+            GetWorkerDetails gwd = new GetWorkerDetails();
+            gwd.getWorkerData(workerCode);
+            Worker worker = gwd.getEmployee();
 
-        txtEditName.setText(worker.getName());
-        txtEditSurname.setText(worker.getSurname());
-        txtEditGender.setText(worker.getGender());
+            txtEditName.setText(worker.getName());
+            txtEditSurname.setText(worker.getSurname());
+            txtEditGender.setText(worker.getGender());
 
-        LocalDate dob = LocalDate.parse(worker.getDob());
-        txtEditDOBDay.setText(String.valueOf(dob.getDayOfMonth()));
-        txtEditDOBMonth.setText(String.valueOf(dob.getMonthValue()));
-        txtEditDOBYear.setText(String.valueOf(dob.getYear()));
+            LocalDate dob = LocalDate.parse(worker.getDob());
+            txtEditDOBDay.setText(String.valueOf(dob.getDayOfMonth()));
+            txtEditDOBMonth.setText(String.valueOf(dob.getMonthValue()));
+            txtEditDOBYear.setText(String.valueOf(dob.getYear()));
 
-        LocalDate startDate = LocalDate.parse(worker.getDateStarted());
-        txtEditStartDay.setText(String.valueOf(startDate.getDayOfMonth()));
-        txtEditStartMonth.setText(String.valueOf(startDate.getMonthValue()));
-        txtEditStartYear.setText(String.valueOf(startDate.getYear()));
+            LocalDate startDate = LocalDate.parse(worker.getDateStarted());
+            txtEditStartDay.setText(String.valueOf(startDate.getDayOfMonth()));
+            txtEditStartMonth.setText(String.valueOf(startDate.getMonthValue()));
+            txtEditStartYear.setText(String.valueOf(startDate.getYear()));
 
-        cmbEditType.setSelectedItem(worker.getType());
-        txtEditRole.setText(worker.getRole());
-        txtEditGroup.setText(worker.getGroup());
-        txtEditWage.setText(worker.getWage());
-        cmbEditStatus.setSelectedItem(worker.getStatus());
+            cmbEditType.setSelectedItem(worker.getType());
+            txtEditRole.setText(worker.getRole());
+            txtEditGroup.setText(worker.getGroup());
+            txtEditWage.setText(worker.getWage());
+            cmbEditStatus.setSelectedItem(worker.getStatus());
 
-    } catch (IOException ex) {
-        JOptionPane.showMessageDialog(this, "Error reading worker details: " + ex.getMessage());
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error reading worker details: " + ex.getMessage());
+        }
     }
-}
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -101,64 +109,83 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
         cmbEditType = new javax.swing.JComboBox<>();
         cmbEditStatus = new javax.swing.JComboBox<>();
         jLabel46 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 50)); // NOI18N
-        jLabel1.setText("Edit Info:");
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel1.setText("Worker information:");
 
         txtEditName.addActionListener(this::txtEditNameActionPerformed);
 
         txtEditDOBDay.addActionListener(this::txtEditDOBDayActionPerformed);
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Employee");
 
         jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Personal");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Gender:");
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Years in service:");
 
         jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Worker Code:");
 
         jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Date started working:");
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Type of Worker:");
 
+        lbl22.setForeground(new java.awt.Color(255, 255, 255));
         lbl22.setText("Cannot be changed");
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
         jLabel41.setText("Wage per Hour: ");
 
+        lbl23.setForeground(new java.awt.Color(255, 255, 255));
         lbl23.setText("Cannot be changed");
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setText("Worker Role:");
 
+        lbl24.setForeground(new java.awt.Color(255, 255, 255));
         lbl24.setText("Cannot be changed");
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setText("Assigned Group:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("-");
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setText("Age:");
 
         txtEditDOBMonth.addActionListener(this::txtEditDOBMonthActionPerformed);
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
         jLabel45.setText("DOB:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("-");
 
         txtEditDOBYear.addActionListener(this::txtEditDOBYearActionPerformed);
@@ -168,29 +195,37 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
         btnConfirm.addActionListener(this::btnConfirmActionPerformed);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("-");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Name:");
 
         txtEditStartMonth.addActionListener(this::txtEditStartMonthActionPerformed);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Surname:");
 
         txtEditStartDay.addActionListener(this::txtEditStartDayActionPerformed);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("-");
 
         txtEditStartYear.addActionListener(this::txtEditStartYearActionPerformed);
 
-        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Picker", " " }));
 
         cmbEditStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive" }));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
         jLabel46.setText("Status");
+
+        jButton1.setText("Return to Home");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,7 +260,7 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtEditDOBYear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(35, 35, 35)
+                .addGap(127, 127, 127)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,23 +295,24 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
                                 .addComponent(txtEditWage, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtEditGroup, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))))
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 63, Short.MAX_VALUE))
+                .addGap(0, 39, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(76, 76, 76)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181)
+                .addComponent(jButton1)
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
                     .addComponent(jLabel32))
@@ -348,9 +384,15 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cmbEditStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel46))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -369,32 +411,32 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
     }//GEN-LAST:event_txtEditDOBYearActionPerformed
 
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
-    try {
-        LocalDate dob = LocalDate.of(
-                Integer.parseInt(txtEditDOBYear.getText()),
-                Integer.parseInt(txtEditDOBMonth.getText()),
-                Integer.parseInt(txtEditDOBDay.getText()));
+        try {
+            LocalDate dob = LocalDate.of(
+                    Integer.parseInt(txtEditDOBYear.getText()),
+                    Integer.parseInt(txtEditDOBMonth.getText()),
+                    Integer.parseInt(txtEditDOBDay.getText()));
 
-        LocalDate startDate = LocalDate.of(
-                Integer.parseInt(txtEditStartYear.getText()),
-                Integer.parseInt(txtEditStartMonth.getText()),
-                Integer.parseInt(txtEditStartDay.getText()));
+            LocalDate startDate = LocalDate.of(
+                    Integer.parseInt(txtEditStartYear.getText()),
+                    Integer.parseInt(txtEditStartMonth.getText()),
+                    Integer.parseInt(txtEditStartDay.getText()));
 
-        EditWorkerDetails ewd = new EditWorkerDetails();
-        ewd.updateWorkerDetails(workerCode, txtEditName.getText(), txtEditSurname.getText(),
-                txtEditGender.getText(), dob, startDate, (String) cmbEditType.getSelectedItem(),
-                txtEditRole.getText(), txtEditGroup.getText(), txtEditWage.getText(), (String) cmbEditStatus.getSelectedItem());
+            EditWorkerDetails ewd = new EditWorkerDetails();
+            ewd.updateWorkerDetails(workerCode, txtEditName.getText(), txtEditSurname.getText(),
+                    txtEditGender.getText(), dob, startDate, (String) cmbEditType.getSelectedItem(),
+                    txtEditRole.getText(), txtEditGroup.getText(), txtEditWage.getText(), (String) cmbEditStatus.getSelectedItem());
 
-        JOptionPane.showMessageDialog(this, "Worker details updated successfully!");
-        this.dispose();
+            JOptionPane.showMessageDialog(this, "Worker details updated successfully!");
+            this.dispose();
 
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Please enter numbers only in the date fields.");
-    } catch (DateTimeException ex) {
-        JOptionPane.showMessageDialog(this, "Please enter a valid date (check day/month values).");
-    } catch (IOException ex) {
-        JOptionPane.showMessageDialog(this, "Error saving changes: " + ex.getMessage());
-    }      
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter numbers only in the date fields.");
+        } catch (DateTimeException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid date (check day/month values).");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error saving changes: " + ex.getMessage());
+        }
     }//GEN-LAST:event_btnConfirmActionPerformed
 
     private void txtEditStartMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditStartMonthActionPerformed
@@ -413,15 +455,19 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEditNameActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirm;
     private javax.swing.JComboBox<String> cmbEditStatus;
     private javax.swing.JComboBox<String> cmbEditType;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;

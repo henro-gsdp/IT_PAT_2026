@@ -97,9 +97,9 @@ public class WorkerHome extends javax.swing.JFrame {
         lbl21 = new javax.swing.JLabel();
         lbl20 = new javax.swing.JLabel();
         btnViewWork = new javax.swing.JButton();
-        btnEditInfo = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         lbl22 = new javax.swing.JLabel();
+        btnLogOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -117,6 +117,7 @@ public class WorkerHome extends javax.swing.JFrame {
         lblDate.setOpaque(true);
 
         lblWorkday.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblWorkday.setForeground(new java.awt.Color(255, 255, 255));
         lblWorkday.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWorkday.setText("New Workday:");
 
@@ -124,36 +125,45 @@ public class WorkerHome extends javax.swing.JFrame {
         btnSubmit.addActionListener(this::btnSubmitActionPerformed);
 
         lblDetails.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblDetails.setForeground(new java.awt.Color(255, 255, 255));
         lblDetails.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDetails.setText("Your Details");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Gender:");
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 153, 51));
 
         lblEndTime.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEndTime.setForeground(new java.awt.Color(255, 255, 255));
         lblEndTime.setText("End Time:");
 
         lblLunchEnd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLunchEnd.setForeground(new java.awt.Color(255, 255, 255));
         lblLunchEnd.setText("End Lunch:");
 
         lblLunchStart.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLunchStart.setForeground(new java.awt.Color(255, 255, 255));
         lblLunchStart.setText("Start Lunch:");
 
         lblTimeStart.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTimeStart.setForeground(new java.awt.Color(255, 255, 255));
         lblTimeStart.setText("Start Time:");
 
         jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText(":");
 
         txtf1.addActionListener(this::txtf1ActionPerformed);
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Work Type:");
 
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("Rows done:");
 
         txtf9.addActionListener(this::txtf9ActionPerformed);
@@ -163,93 +173,123 @@ public class WorkerHome extends javax.swing.JFrame {
         jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
 
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText(":");
 
         txtf3.addActionListener(this::txtf3ActionPerformed);
 
         jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText(":");
 
         txtf5.addActionListener(this::txtf5ActionPerformed);
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText(":");
 
         txtf7.addActionListener(this::txtf7ActionPerformed);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Name:");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Surname:");
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("Employee");
 
         jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setText("Personal");
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
         jLabel37.setText("Years in service:");
 
         jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
         jLabel38.setText("Worker Code:");
 
         jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Date started working:");
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Type of Worker:");
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
         jLabel41.setText("Wage per Hour: ");
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setText("Worker Role:");
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setText("Assigned Group:");
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setText("Age:");
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
         jLabel45.setText("DOB:");
 
+        lbl10.setForeground(new java.awt.Color(255, 255, 255));
         lbl10.setText("jLabel1");
 
+        lbl11.setForeground(new java.awt.Color(255, 255, 255));
         lbl11.setText("jLabel1");
 
+        lbl12.setForeground(new java.awt.Color(255, 255, 255));
         lbl12.setText("jLabel1");
 
+        lbl14.setForeground(new java.awt.Color(255, 255, 255));
         lbl14.setText("jLabel1");
 
+        lbl13.setForeground(new java.awt.Color(255, 255, 255));
         lbl13.setText("jLabel1");
 
+        lbl15.setForeground(new java.awt.Color(255, 255, 255));
         lbl15.setText("jLabel1");
 
+        lbl16.setForeground(new java.awt.Color(255, 255, 255));
         lbl16.setText("jLabel1");
 
+        lbl17.setForeground(new java.awt.Color(255, 255, 255));
         lbl17.setText("jLabel1");
 
+        lbl18.setForeground(new java.awt.Color(255, 255, 255));
         lbl18.setText("jLabel1");
 
+        lbl19.setForeground(new java.awt.Color(255, 255, 255));
         lbl19.setText("jLabel1");
 
+        lbl21.setForeground(new java.awt.Color(255, 255, 255));
         lbl21.setText("jLabel1");
 
+        lbl20.setForeground(new java.awt.Color(255, 255, 255));
         lbl20.setText("jLabel1");
 
         btnViewWork.setText("View Past Workdays");
         btnViewWork.addActionListener(this::btnViewWorkActionPerformed);
 
-        btnEditInfo.setText("Edit");
-        btnEditInfo.addActionListener(this::btnEditInfoActionPerformed);
-
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel46.setText("Wage per Hour: ");
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setText("Status");
 
+        lbl22.setForeground(new java.awt.Color(255, 255, 255));
         lbl22.setText("jLabel1");
+
+        btnLogOut.setText("Log Out");
+        btnLogOut.addActionListener(this::btnLogOutActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,27 +298,17 @@ public class WorkerHome extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(134, 134, 134)
-                                .addComponent(lblDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(lblClock, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(134, 134, 134)
-                                .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(lblWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134)
+                        .addComponent(lblDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(208, 208, 208)
-                                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addContainerGap()
+                                        .addGap(40, 40, 40)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -322,7 +352,10 @@ public class WorkerHome extends javax.swing.JFrame {
                                                         .addGap(7, 7, 7)
                                                         .addComponent(jLabel29)
                                                         .addGap(8, 8, 8)
-                                                        .addComponent(txtf2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                                        .addComponent(txtf2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(189, 189, 189)
+                                        .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(100, 100, 100)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -345,14 +378,11 @@ public class WorkerHome extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel19)
                                         .addGap(71, 71, 71)
-                                        .addComponent(lbl10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(lbl10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
-                                .addComponent(btnViewWork, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnEditInfo)
-                                .addGap(43, 43, 43)))
+                                .addComponent(btnViewWork, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel39)
@@ -388,14 +418,27 @@ public class WorkerHome extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lbl22, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(72, 72, 72))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(lblClock, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134)
+                .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogOut)
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblClock)
-                    .addComponent(lblDate))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblClock)
+                            .addComponent(lblDate)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -437,9 +480,7 @@ public class WorkerHome extends javax.swing.JFrame {
                                         .addGap(19, 19, 19)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel31)
-                                            .addComponent(txtf9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnSubmit))
+                                            .addComponent(txtf9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(99, 99, 99)
                                         .addComponent(jLabel28))))
@@ -465,10 +506,10 @@ public class WorkerHome extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel44)
                                     .addComponent(lbl14))))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSubmit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnViewWork)
-                            .addComponent(btnEditInfo))
+                        .addComponent(btnViewWork)
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel32)
@@ -535,8 +576,8 @@ public class WorkerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_txtf9ActionPerformed
 
     private void btnViewWorkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewWorkActionPerformed
-    ViewWork viewWork = new ViewWork(this, true, worker.getWorkerCode());
-    viewWork.setVisible(true);
+        ViewWork viewWork = new ViewWork(this, true, worker.getWorkerCode());
+        viewWork.setVisible(true);
     }//GEN-LAST:event_btnViewWorkActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
@@ -567,14 +608,20 @@ public class WorkerHome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void btnEditInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditInfoActionPerformed
-        ViewEditWorkerInfo editWorker = new ViewEditWorkerInfo(this, true, worker.getWorkerCode());
-        editWorker.setVisible(true); // modal: the code below runs after the dialog closes
-    }//GEN-LAST:event_btnEditInfoActionPerformed
+    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
+        int choice = JOptionPane.showConfirmDialog(this,
+                "Are you sure you want to log out?", "Log Out", JOptionPane.YES_NO_OPTION);
+
+        if (choice == JOptionPane.YES_OPTION) {
+            LoginPage login = new LoginPage();
+            login.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnLogOutActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEditInfo;
+    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnViewWork;
     private javax.swing.JComboBox<String> jComboBox1;

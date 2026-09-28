@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class CreateWorkday {
+
     // Direct Workday Details
     private String workerCode; // Links this workday record back to a specific worker
     private String jobID, typeOfWork, rowsString;
@@ -26,7 +27,6 @@ public class CreateWorkday {
 
     private Duration lunchDuration;
     private Duration hoursWorked;
-
 
     public CreateWorkday() throws IOException {
         JobID job = new JobID();

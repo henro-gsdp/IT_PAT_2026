@@ -10,9 +10,8 @@ import java.util.Scanner;
 
 public class EditWorkerDetails {
 
-    
     private static final int DATA_LINES = 12;
-    
+
     public void updateWorkerDetails(String workerCode, String name, String surname, String gender,
             LocalDate dob, LocalDate startDate, String type, String role, String group, String wage, String status)
             throws IOException {
@@ -41,7 +40,7 @@ public class EditWorkerDetails {
             String lineOfCode = scFile.nextLine();
 
             if (lineOfCode.isBlank()) {
-                continue; 
+                continue;
             }
 
             String currentCode = lineOfCode.substring(

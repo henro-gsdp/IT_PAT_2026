@@ -21,7 +21,6 @@ public class JobID {
 
     }
 
-
     private void genJobID() throws IOException {
         Scanner scFile = new Scanner(new File("JobID.txt"));
 
@@ -51,19 +50,19 @@ public class JobID {
         genJobIDCode.close();
 
     }
-    
+
     public String getJobIDCode() throws FileNotFoundException {
         Scanner scFile = new Scanner(new File("JobID.txt"));
 
-            while (scFile.hasNextLine()) {
-                Scanner scLine = new Scanner(scFile.nextLine());
-                jobID = scLine.next();
-                
-                scLine.close();
-            }
-            
-            scFile.close();
+        while (scFile.hasNextLine()) {
+            Scanner scLine = new Scanner(scFile.nextLine());
+            jobID = scLine.next();
+
+            scLine.close();
+        }
+
+        scFile.close();
         return jobID;
     }
-    
+
 }

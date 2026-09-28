@@ -24,54 +24,54 @@ public class Worker {
     }
 
     public String getWorkerCode() {
-        return workerCode; 
+        return workerCode;
     }
-    
+
     public String getName() {
-        return name; 
+        return name;
     }
-    
+
     public String getSurname() {
-        return surname; 
+        return surname;
     }
-    
+
     public String getGender() {
-        return gender; 
+        return gender;
     }
-    
+
     public String getDob() {
-        return dob; 
+        return dob;
     }
-    
+
     public String getAge() {
-        return age; 
+        return age;
     }
-    
+
     public String getDateStarted() {
-        return dateStarted; 
+        return dateStarted;
     }
-    
+
     public String getServiceYears() {
-        return serviceYears; 
+        return serviceYears;
     }
-    
+
     public String getRole() {
-        return role; 
+        return role;
     }
-    
+
     public String getType() {
-        return type; 
+        return type;
     }
-    
+
     public String getGroup() {
-        return group; 
+        return group;
     }
-    
+
     public String getWage() {
-        return wage; 
+        return wage;
     }
-    
+
     public String getStatus() {
-        return status; 
+        return status;
     }
 }
