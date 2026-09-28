@@ -162,7 +162,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAddWorker">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add Workday"/>
+        <Property name="text" type="java.lang.String" value="Add Worker"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddWorkerActionPerformed"/>
@@ -170,7 +170,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAddWorkday">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add Worker"/>
+        <Property name="text" type="java.lang.String" value="Add Workday"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddWorkdayActionPerformed"/>

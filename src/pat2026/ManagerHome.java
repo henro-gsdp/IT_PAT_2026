@@ -131,10 +131,10 @@ public class ManagerHome extends javax.swing.JFrame {
         btnLogOut.setText("Log Out");
         btnLogOut.addActionListener(this::btnLogOutActionPerformed);
 
-        btnAddWorker.setText("Add Workday");
+        btnAddWorker.setText("Add Worker");
         btnAddWorker.addActionListener(this::btnAddWorkerActionPerformed);
 
-        btnAddWorkday.setText("Add Worker");
+        btnAddWorkday.setText("Add Workday");
         btnAddWorkday.addActionListener(this::btnAddWorkdayActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -236,11 +236,13 @@ public class ManagerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddWorkerActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        AddWorkday dialog = new AddWorkday(this);
+        dialog.setVisible(true);
+        DisplayDetails();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnAddWorkdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddWorkdayActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnAddWorkdayActionPerformed
 
     /**
