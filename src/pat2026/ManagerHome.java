@@ -226,9 +226,13 @@ public class ManagerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     private void btnAddWorkerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddWorkerActionPerformed
-        AddWorkday dialog = new AddWorkday(this, true, workerCode);
-        dialog.setVisible(true);
-        displayTableDetails();
+        try {
+            AddWorker dialog = new AddWorker(this, true);
+            dialog.setVisible(true);
+            DisplayDetails();
+        } catch (IOException ex) {
+            System.getLogger(ManagerHome.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_btnAddWorkerActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
