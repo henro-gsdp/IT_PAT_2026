@@ -77,6 +77,7 @@ public class ManagerHome extends javax.swing.JFrame {
         btnLogOut = new javax.swing.JButton();
         btnAddWorker = new javax.swing.JButton();
         btnAddWorkday = new javax.swing.JButton();
+        btnDeleteWorkday = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -133,6 +134,9 @@ public class ManagerHome extends javax.swing.JFrame {
         btnAddWorkday.setText("Add Workday");
         btnAddWorkday.addActionListener(this::btnAddWorkdayActionPerformed);
 
+        btnDeleteWorkday.setText("Delete Workday");
+        btnDeleteWorkday.addActionListener(this::btnDeleteWorkdayActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,17 +144,17 @@ public class ManagerHome extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(scrlWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 848, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(btnAddWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAddWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrlWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 848, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAddWorkday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAddWorker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDeleteWorkday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -167,9 +171,11 @@ public class ManagerHome extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(scrlWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAddWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnAddWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddWorker, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeleteWorkday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(19, 19, 19))
         );
 
@@ -181,13 +187,8 @@ public class ManagerHome extends javax.swing.JFrame {
     }//GEN-LAST:event_scrlWorkerMouseClicked
 
     private void tblWorkerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblWorkerMouseClicked
-
         int row = tblWorker.rowAtPoint(evt.getPoint());
         int col = tblWorker.columnAtPoint(evt.getPoint());
-
-        if (row < 0) {
-            return; // clicked on empty space
-        }
 
         String workerCode = tblWorker.getValueAt(row, 0).toString();
 
@@ -237,6 +238,31 @@ public class ManagerHome extends javax.swing.JFrame {
         DisplayDetails();
     }//GEN-LAST:event_btnAddWorkdayActionPerformed
 
+    private void btnDeleteWorkdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteWorkdayActionPerformed
+        String jobID = JOptionPane.showInputDialog(this, "Enter the JobID to delete (Remember the '#'!):");
+        if (jobID == null || jobID.trim().isEmpty()) {
+            return;
+        }
+
+        int confirm = JOptionPane.showConfirmDialog(this,
+                "Are you sure you want to delete workday " + jobID.trim() + "?",
+                "Confirm Delete", JOptionPane.YES_NO_OPTION);
+        if (confirm != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        try {
+            DeleteWorkday del = new DeleteWorkday();
+            if (del.deleteWorkday(jobID)) {
+                JOptionPane.showMessageDialog(this, "Workday deleted.");
+            } else {
+                JOptionPane.showMessageDialog(this, "JobID not found.");
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Could not access WorkdayDetails.txt");
+        }
+    }//GEN-LAST:event_btnDeleteWorkdayActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,6 +270,7 @@ public class ManagerHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddWorkday;
     private javax.swing.JButton btnAddWorker;
+    private javax.swing.JButton btnDeleteWorkday;
     private javax.swing.JButton btnLogOut;
     private javax.swing.JLabel lblHeader;
     private javax.swing.JScrollPane scrlWorker;

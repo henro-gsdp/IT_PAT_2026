@@ -1,5 +1,6 @@
 package pat2026;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,21 +10,9 @@ import java.util.Scanner;
 
 public class CreateWorker {
 
-    private WorkerLoginDetails code = new WorkerLoginDetails(); // Unique worker code
     private String workerCode, workerPassword;
-
-    // Only generates the new worker's code and password
-    public CreateWorker() throws IOException {
-        Scanner scanCode = new Scanner(code.getWorkerCode()).useDelimiter(",");
-
-        workerCode = scanCode.next();
-        workerPassword = scanCode.next();
-
-        scanCode.close();
-    }
-
-    // Calculates age and years of service, then adds the worker to WorkerDetails.txt
-    public void saveWorker(String name, String surname, String gender, LocalDate dob,
+    
+    public void saveWorker(String workerCode, String name, String surname, String gender, LocalDate dob,
             LocalDate startDate, String type, String role, String group,
             double wage, String status) throws IOException {
 
@@ -46,7 +35,12 @@ public class CreateWorker {
         workerDetails.close();
     }
 
-    public String getWorkerCode() {
+    public String getWorkerCode(String role) throws IOException {
+        WorkerLoginDetails loginDetails = new WorkerLoginDetails(role);
+
+        workerCode = loginDetails.getWorkerCode();
+        workerPassword = loginDetails.getWorkerPassword();
+
         return workerCode;
     }
 }

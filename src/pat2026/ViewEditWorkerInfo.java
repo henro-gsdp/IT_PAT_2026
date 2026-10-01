@@ -216,7 +216,7 @@ public class ViewEditWorkerInfo extends javax.swing.JDialog {
 
         txtEditStartYear.addActionListener(this::txtEditStartYearActionPerformed);
 
-        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Picker", " " }));
+        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Permanent", "Seasonal", " " }));
 
         cmbEditStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Active", "Inactive" }));
 

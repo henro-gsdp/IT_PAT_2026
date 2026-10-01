@@ -1,6 +1,7 @@
 package pat2026;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;
 
@@ -72,6 +73,12 @@ public class AddWorkday extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         lblTimeStart1 = new javax.swing.JLabel();
         txtf10 = new javax.swing.JTextField();
+        lblTimeStart2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtEditStartMonth = new javax.swing.JTextField();
+        txtEditStartDay = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtEditStartYear = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -143,16 +150,34 @@ public class AddWorkday extends javax.swing.JDialog {
 
         lblTimeStart1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTimeStart1.setForeground(new java.awt.Color(255, 255, 255));
-        lblTimeStart1.setText("Worker Code:");
+        lblTimeStart1.setText("Date:");
 
         txtf10.addActionListener(this::txtf10ActionPerformed);
+
+        lblTimeStart2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTimeStart2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTimeStart2.setText("Worker Code:");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("-");
+
+        txtEditStartMonth.addActionListener(this::txtEditStartMonthActionPerformed);
+
+        txtEditStartDay.addActionListener(this::txtEditStartDayActionPerformed);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("-");
+
+        txtEditStartYear.addActionListener(this::txtEditStartYearActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 26, Short.MAX_VALUE)
@@ -162,32 +187,41 @@ public class AddWorkday extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblEndTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblTimeStart1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblTimeStart2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtf10, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtEditStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtEditStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtEditStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblEndTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lblTimeStart, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblLunchStart, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblLunchEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(45, 45, 45)
                                         .addComponent(txtf7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(7, 7, 7)
                                         .addComponent(jLabel35)
                                         .addGap(8, 8, 8)
                                         .addComponent(txtf8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtf9)
-                                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTimeStart, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblLunchStart, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblLunchEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(45, 45, 45)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtf5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(7, 7, 7)
@@ -205,11 +239,9 @@ public class AddWorkday extends javax.swing.JDialog {
                                         .addGap(7, 7, 7)
                                         .addComponent(jLabel29)
                                         .addGap(8, 8, 8)
-                                        .addComponent(txtf2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTimeStart1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtf10, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(txtf2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtf9, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(233, 233, 233)
                         .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -219,13 +251,21 @@ public class AddWorkday extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblWorkday, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTimeStart1)
-                    .addComponent(txtf10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtf10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTimeStart2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEditStartDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtEditStartMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtEditStartYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTimeStart1))
+                .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTimeStart)
                     .addComponent(txtf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +299,7 @@ public class AddWorkday extends javax.swing.JDialog {
                     .addComponent(txtf9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnSubmit)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -279,6 +319,11 @@ public class AddWorkday extends javax.swing.JDialog {
                 return;
             }
 
+            LocalDate date = LocalDate.of(
+                    Integer.parseInt(txtEditStartYear.getText().trim()),
+                    Integer.parseInt(txtEditStartMonth.getText().trim()),
+                    Integer.parseInt(txtEditStartDay.getText().trim()));
+
             int startHour = Integer.parseInt(txtf1.getText().trim());
             int startMinute = Integer.parseInt(txtf2.getText().trim());
             int lunchStartHour = Integer.parseInt(txtf3.getText().trim());
@@ -294,6 +339,10 @@ public class AddWorkday extends javax.swing.JDialog {
             LocalTime lunchStart = LocalTime.of(lunchStartHour, lunchStartMinute);
             LocalTime lunchEnd = LocalTime.of(lunchEndHour, lunchEndMinute);
             LocalTime end = LocalTime.of(endHour, endMinute);
+
+            if (date.isAfter(LocalDate.now())) {
+                JOptionPane.showMessageDialog(this, "The date worked cannot be in the future.");
+            }
 
             if (start.isAfter(lunchStart) || lunchStart.isAfter(lunchEnd) || lunchEnd.isAfter(end)
                     || !start.isBefore(end)) {
@@ -315,6 +364,7 @@ public class AddWorkday extends javax.swing.JDialog {
 
             CreateWorkday workday = new CreateWorkday();
 
+            workday.setDate(date);
             workday.setStartHour(startHour);
             workday.setStartMinute(startMinute);
             workday.setLunchStartHour(lunchStartHour);
@@ -368,6 +418,18 @@ public class AddWorkday extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtf10ActionPerformed
 
+    private void txtEditStartMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditStartMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEditStartMonthActionPerformed
+
+    private void txtEditStartDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditStartDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEditStartDayActionPerformed
+
+    private void txtEditStartYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditStartYearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEditStartYearActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -382,12 +444,18 @@ public class AddWorkday extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblEndTime;
     private javax.swing.JLabel lblLunchEnd;
     private javax.swing.JLabel lblLunchStart;
     private javax.swing.JLabel lblTimeStart;
     private javax.swing.JLabel lblTimeStart1;
+    private javax.swing.JLabel lblTimeStart2;
     private javax.swing.JLabel lblWorkday;
+    private javax.swing.JTextField txtEditStartDay;
+    private javax.swing.JTextField txtEditStartMonth;
+    private javax.swing.JTextField txtEditStartYear;
     private javax.swing.JTextField txtf1;
     private javax.swing.JTextField txtf10;
     private javax.swing.JTextField txtf2;

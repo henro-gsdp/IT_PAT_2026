@@ -13,8 +13,6 @@ public class AddWorker extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setupBackground();
-
-        lbl24.setText(crtWorker.getWorkerCode());
     }
 
     private void setupBackground() {
@@ -110,7 +108,8 @@ public class AddWorker extends javax.swing.JDialog {
 
         txtEditStartYear.addActionListener(this::txtEditStartYearActionPerformed);
 
-        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Picker", " " }));
+        cmbEditType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Permanent", "Seasonal" }));
+        cmbEditType.addActionListener(this::cmbEditTypeActionPerformed);
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,6 +122,8 @@ public class AddWorker extends javax.swing.JDialog {
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Gender:");
+
+        txtEditRole.addActionListener(this::txtEditRoleActionPerformed);
 
         jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(255, 255, 255));
@@ -378,6 +379,21 @@ public class AddWorker extends javax.swing.JDialog {
                 return;
             }
 
+            if (role.length() < 3) {
+                JOptionPane.showMessageDialog(this, "The role must be at least 3 letters long.");
+                return;
+            }
+
+            if (gender.length() >= 2) {
+                JOptionPane.showMessageDialog(this, "Please only say 'm' or 'f' for gender.");
+                return;
+            }
+
+            if (!(gender.equalsIgnoreCase("m")) && !(gender.equalsIgnoreCase("f"))) {
+                JOptionPane.showMessageDialog(this, "Please give a correct gender.");
+                return;
+            }
+
             LocalDate dob = LocalDate.of(
                     Integer.parseInt(txtEditDOBYear.getText().trim()),
                     Integer.parseInt(txtEditDOBMonth.getText().trim()),
@@ -409,11 +425,11 @@ public class AddWorker extends javax.swing.JDialog {
                 return;
             }
 
-            crtWorker.saveWorker(name, surname, gender, dob, startDate,
+            crtWorker.saveWorker(crtWorker.getWorkerCode(role.substring(0, 3)), name, surname, gender, dob, startDate,
                     (String) cmbEditType.getSelectedItem(), role, group, wage,
                     (String) cmbEditStatus.getSelectedItem());
 
-            JOptionPane.showMessageDialog(this, "Worker " + crtWorker.getWorkerCode() + " added successfully!");
+            JOptionPane.showMessageDialog(this, "Worker added successfully!");
             this.dispose();
 
         } catch (NumberFormatException ex) {
@@ -456,6 +472,14 @@ public class AddWorker extends javax.swing.JDialog {
     private void txtEditDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditDOBYearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEditDOBYearActionPerformed
+
+    private void cmbEditTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbEditTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbEditTypeActionPerformed
+
+    private void txtEditRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditRoleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEditRoleActionPerformed
 
     /**
      * @param args the command line arguments

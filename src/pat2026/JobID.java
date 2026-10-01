@@ -30,7 +30,7 @@ public class JobID {
             if (scLine.hasNext()) {
                 String code = scLine.next();
 
-                String num = code.substring(3, 6);
+                String num = code.substring(1);
                 lastNum = Integer.parseInt(num);
             }
             scLine.close();

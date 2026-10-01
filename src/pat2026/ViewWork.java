@@ -11,6 +11,7 @@ public class ViewWork extends javax.swing.JDialog {
     private Workday[] workdays;   // same order as the table rows
     private int workdayCount = 0; // how many rows the table has
     private DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("HH:mm");
 
     public ViewWork(java.awt.Frame parent, boolean modal, String workerCode) {
         super(parent, modal);
@@ -43,10 +44,13 @@ public class ViewWork extends javax.swing.JDialog {
                     Object[] row = {
                         workdays[i].getJobID(),
                         workdays[i].getDateWorked().format(dateFormat),
+                        workdays[i].getStartTime().format(timeFormat),
+                        workdays[i].getLunchStart().format(timeFormat),
+                        workdays[i].getLunchEnd().format(timeFormat),
+                        workdays[i].getEndTime().format(timeFormat),
                         formatDuration(workdays[i].getHoursWorked()),
                         workdays[i].getTypeOfWork(),
-                        workdays[i].getRowsCompleted(),
-                        "View"
+                        workdays[i].getRowsCompleted()
                     };
                     model.addRow(row);
                 }
@@ -113,17 +117,17 @@ public class ViewWork extends javax.swing.JDialog {
 
         tblViewWork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "JobID", "Date", "Time Start", "Lunch Start", "Lunch End", "Time End", "Time worked", "Type of Work", "Rows Complete", "Type Of Work"
+                "JobID", "Date", "Time Start", "Lunch Start", "Lunch End", "Time End", "Time worked", "Type of Work", "Rows Complete"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -148,15 +152,15 @@ public class ViewWork extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190)
-                .addComponent(jButton1)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrlViewWork, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 216, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(190, 190, 190)
+                        .addComponent(jButton1))
+                    .addComponent(scrlViewWork))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

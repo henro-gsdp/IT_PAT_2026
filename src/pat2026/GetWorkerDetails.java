@@ -14,8 +14,6 @@ public class GetWorkerDetails {
     public GetWorkerDetails() throws IOException {
     }
 
-    // Now takes the code we're searching for, and only builds
-    // the Worker object once it finds a matching record.
     public boolean getWorkerData(String codeToFind) throws FileNotFoundException {
         Scanner scFile = new Scanner(new File("WorkerDetails.txt"));
         boolean found = false;
@@ -52,12 +50,12 @@ public class GetWorkerDetails {
 
             String lineofYearsInService = scFile.nextLine();
             serviceYears = lineofYearsInService.substring(lineofYearsInService.indexOf(":") + 1).trim();
-
-            String lineOfRole = scFile.nextLine();
-            role = lineOfRole.substring(lineOfRole.indexOf(":") + 1).trim();
-
+            
             String lindeOfWorkerType = scFile.nextLine();
             type = lindeOfWorkerType.substring(lindeOfWorkerType.indexOf(":") + 1).trim();
+            
+            String lineOfRole = scFile.nextLine();
+            role = lineOfRole.substring(lineOfRole.indexOf(":") + 1).trim();
 
             String lineOfGroup = scFile.nextLine();
             group = lineOfGroup.substring(lineOfGroup.indexOf(":") + 1).trim();

@@ -1,28 +1,45 @@
-WORKER CODE: PIC003	(Password: #003)
+WORKER CODE: MAN001	(Password: #001)
 --------------------------------------------------------------------------------------------------
-Worker Name: he
-Worker Surname: he
+Worker Name: Henro
+Worker Surname: vd Linden
 Gender: m
 DOB: 2000-10-01
 Age: 25
-Date started working on Farm: 2010-12-23
-Number of years in service: 15
-Type of worker: Item 1
-Role of worker: Item 1
-Group: a
-Wage:20,00
-
-WORKER CODE: MAN004	(Password: #004)
---------------------------------------------------------------------------------------------------
-Worker Name: hi
-Worker Surname: sa
-Gender: m
-DOB: 2003-12-03
-Age: 22
-Date started working on Farm: 2015-10-23
-Number of years in service: 10
+Date started working on Farm: 2020-12-23
+Number of years in service: 5
 Type of worker: Permanent
-Role of worker: appy
-Group: b
-Wage:30,00
+Role of worker: Manager
+Group: a
+Wage:150,00
+Status:Active
+
+WORKER CODE: GEN002	(Password: #002)
+--------------------------------------------------------------------------------------------------
+Worker Name: Ethan
+Worker Surname: Boersema
+Gender: m
+DOB: 2009-04-12
+Age: 17
+Date started working on Farm: 2025-04-03
+Number of years in service: 1
+Type of worker: Permanent
+Role of worker: General
+Group: A
+Wage:50,00
+Status:Active
+
+WORKER CODE: GEN003	(Password: #003)
+--------------------------------------------------------------------------------------------------
+Worker Name: Damien
+Worker Surname: Botma
+Gender: m
+DOB: 2000-10-01
+Age: 26
+Date started working on Farm: 2018-09-04
+Number of years in service: 8
+Type of worker: Seasonal
+Role of worker: General
+Group: B
+Wage:80,00
+Status: Active
 

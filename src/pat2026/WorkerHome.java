@@ -1,6 +1,7 @@
 package pat2026;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -583,7 +584,8 @@ public class WorkerHome extends javax.swing.JFrame {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         try {
             CreateWorkday workday = new CreateWorkday();
-
+            
+            workday.setDate(LocalDate.now());
             workday.setStartHour(Integer.parseInt(txtf1.getText()));
             workday.setStartMinute(Integer.parseInt(txtf2.getText()));
             workday.setLunchStartHour(Integer.parseInt(txtf3.getText()));

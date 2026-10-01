@@ -23,7 +23,7 @@ public class CreateWorkday {
     private int lunchStartHour, lunchStartMinute;
     private int lunchEndHour, lunchEndMinute;
 
-    private LocalDate dateWorked = LocalDate.now(); // Day the workday is being logged for
+    private LocalDate dateWorked;
 
     private Duration lunchDuration;
     private Duration hoursWorked;
@@ -32,10 +32,13 @@ public class CreateWorkday {
         JobID job = new JobID();
         jobID = job.getJobIDCode();
     }
-
-    // Setting of the values needed
+        // Setting of the values needed
     public void setWorkerCode(String workerCode) {
         this.workerCode = workerCode;
+    }
+    
+    public void setDate(LocalDate dateWorked) {
+        this.dateWorked = dateWorked;
     }
 
     public void setStartHour(int startHour) {
